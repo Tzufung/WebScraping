@@ -7,6 +7,6 @@ headers = {"user-agent":
 dic = {"name": "Tzufung"}
 data = bytes(parse.urlencode(dic), encoding="utf-8")
 
-req = request.Request(url=url, data=data, headers=headers, method='POST')
+req = request.Request(url=url, data=data, headers=headers, method='POST')    # req.add_header()
 response = request.urlopen(req)
 print(response.read().decode("utf-8"))
