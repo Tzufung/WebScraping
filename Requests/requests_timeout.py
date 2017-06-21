@@ -1,5 +1,9 @@
 # 超时设置
 import requests
+from requests.exceptions import ReadTimeout
 
-response = requests.get("http://www.taobao.com", timeout=1)
-print(response.status_code)
+try:
+    response = requests.get("http://www.taobao.com", timeout=0.001)
+    print(response.status_code)
+except ReadTimeout:
+    print("Timeout")
